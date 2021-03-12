@@ -18,7 +18,7 @@ func main() {
 		if err != nil{
 			panic(err)
 		}
-		io.WriteString(conn, fmt.Sprint("Hello World\n", time.Now(), "\n"))
+		io.WriteString(conn, fmt.Sprint("Hello World \n", time.Now(), "\n"))
 		conn.Close()
 	}
 }
