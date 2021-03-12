@@ -1,8 +1,6 @@
 FROM golang:latest
 
-LABEL maintainer="AnandD032"
-
-WORKDIR /app
+WORKDIR /goworkspace
 
 COPY go.mod .
 
@@ -10,8 +8,8 @@ RUN go mod download
 
 COPY . .
 
-ENV PORT 8080
+RUN go build -o ./goworkspace .
 
-RUN go build
+EXPOSE 8080
 
 CMD ["./goworkspace"]
